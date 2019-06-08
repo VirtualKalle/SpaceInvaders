@@ -20,13 +20,13 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -37,8 +37,8 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -229,6 +229,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.r
@@ -354,6 +359,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131038, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: maxAttackTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.r
@@ -416,6 +431,7 @@ Transform:
   - {fileID: 1665372311}
   - {fileID: 499214726}
   - {fileID: 1883649648}
+  - {fileID: 2043804272}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -552,8 +568,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  moveRight: 100
-  moveLeft: 97
+  moveRight: 275
+  moveLeft: 276
 --- !u!65 &205900232
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -767,20 +783,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0.9326082
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.2216981
+      value: 0.2235294
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.2216981
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb7af679da4500a4381033844bcd40db, type: 3}
@@ -851,20 +872,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0.9326082
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.2216981
+      value: 0.2235294
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.2216981
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb7af679da4500a4381033844bcd40db, type: 3}
@@ -971,6 +997,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131038, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: maxAttackTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
@@ -1317,6 +1353,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.r
@@ -1412,6 +1453,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
@@ -1542,6 +1588,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.r
@@ -1631,6 +1682,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
@@ -2073,6 +2129,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131038, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: maxAttackTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.r
@@ -2168,6 +2234,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
@@ -2271,6 +2342,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.r
@@ -2354,6 +2430,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
@@ -2439,6 +2520,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.r
@@ -2522,6 +2608,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb7af679da4500a4381033844bcd40db, type: 3}
@@ -2632,6 +2723,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131038, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: maxAttackTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
@@ -2763,6 +2864,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb7af679da4500a4381033844bcd40db, type: 3}
@@ -3005,6 +3111,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.r
@@ -3089,20 +3200,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0.9326082
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.2216981
+      value: 0.2235294
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.2216981
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb7af679da4500a4381033844bcd40db, type: 3}
@@ -3172,6 +3288,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
@@ -3262,6 +3383,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb7af679da4500a4381033844bcd40db, type: 3}
@@ -3388,20 +3514,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0.9326082
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.2216981
+      value: 0.2235294
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.2216981
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb7af679da4500a4381033844bcd40db, type: 3}
@@ -3638,20 +3769,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0.9326082
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.2216981
+      value: 0.2235294
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.2216981
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb7af679da4500a4381033844bcd40db, type: 3}
@@ -3728,20 +3864,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0.9326082
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.2216981
+      value: 0.2235294
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.2216981
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb7af679da4500a4381033844bcd40db, type: 3}
@@ -3824,20 +3965,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0.9326082
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.2216981
+      value: 0.2235294
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.2216981
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb7af679da4500a4381033844bcd40db, type: 3}
@@ -3907,6 +4053,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131038, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: maxAttackTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
@@ -4042,6 +4198,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131038, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: maxAttackTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.r
@@ -4125,6 +4291,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
@@ -4216,6 +4387,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb7af679da4500a4381033844bcd40db, type: 3}
 --- !u!1001 &1417727820
@@ -4284,6 +4460,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb7af679da4500a4381033844bcd40db, type: 3}
@@ -4365,6 +4546,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131038, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: maxAttackTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
@@ -4449,6 +4640,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
@@ -4540,20 +4736,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0.9326082
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.2216981
+      value: 0.2235294
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.2216981
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb7af679da4500a4381033844bcd40db, type: 3}
@@ -4623,6 +4824,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
@@ -4720,6 +4926,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131038, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: maxAttackTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.r
@@ -4804,6 +5020,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.r
@@ -4852,7 +5073,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menu: {fileID: 404942619}
   HUD: {fileID: 429782858}
-  _gameFieldSize: 7
 --- !u!4 &1665372311
 Transform:
   m_ObjectHideFlags: 0
@@ -4901,7 +5121,7 @@ Transform:
   m_GameObject: {fileID: 1686306890}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 4, y: 4, z: 4.102}
+  m_LocalScale: {x: 2, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 306319699}
   m_RootOrder: 0
@@ -5138,6 +5358,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb7af679da4500a4381033844bcd40db, type: 3}
 --- !u!1001 &1730009825
@@ -5206,6 +5431,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
@@ -5291,6 +5521,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131038, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: maxAttackTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.r
@@ -5375,6 +5615,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb7af679da4500a4381033844bcd40db, type: 3}
 --- !u!4 &1761874515 stripped
@@ -5450,6 +5695,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb7af679da4500a4381033844bcd40db, type: 3}
 --- !u!1001 &1764156800
@@ -5519,20 +5769,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0.9326082
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.2216981
+      value: 0.2235294
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.2216981
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb7af679da4500a4381033844bcd40db, type: 3}
@@ -5608,6 +5863,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131038, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: maxAttackTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
@@ -5699,20 +5964,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0.9326082
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.2216981
+      value: 0.2235294
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.2216981
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb7af679da4500a4381033844bcd40db, type: 3}
@@ -5849,6 +6119,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.r
@@ -5932,6 +6207,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
@@ -6096,6 +6376,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.r
@@ -6180,6 +6465,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.r
@@ -6263,6 +6553,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb7af679da4500a4381033844bcd40db, type: 3}
@@ -6376,6 +6671,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131038, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: maxAttackTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.r
@@ -6393,6 +6698,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb7af679da4500a4381033844bcd40db, type: 3}
+--- !u!1 &2043804271
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2043804272}
+  - component: {fileID: 2043804273}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2043804272
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043804271}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 132003798}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2043804273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043804271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fdfe5018b86cd849bf7d74aeab416e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameFieldSize: 9
 --- !u!1001 &2044451879
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6459,6 +6808,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
@@ -6544,6 +6898,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.r
@@ -6628,20 +6987,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0.9326082
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.2216981
+      value: 0.2235294
       objectReference: {fileID: 0}
     - target: {fileID: 7436888397111609978, guid: fb7af679da4500a4381033844bcd40db,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.2216981
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb7af679da4500a4381033844bcd40db, type: 3}
@@ -6717,6 +7081,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb7af679da4500a4381033844bcd40db, type: 3}
@@ -6810,6 +7179,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688043554597131039, guid: fb7af679da4500a4381033844bcd40db,
+        type: 3}
+      propertyPath: startHealth
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb7af679da4500a4381033844bcd40db, type: 3}

@@ -3,7 +3,7 @@
 public class PlayerShot : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 10f;
-    [SerializeField] private int damage = 100;
+    [SerializeField] private int damage;
     [SerializeField] private float lifeTime = 3f;
 
     private float lifeTimeLeft;

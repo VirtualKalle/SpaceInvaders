@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        moveLimit = GameManager.gameFieldSize;
+        moveLimit = LevelManager.gameFieldSize;
     }
 
     private void Update()

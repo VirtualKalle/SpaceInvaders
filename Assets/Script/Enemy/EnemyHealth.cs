@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour
     public delegate void enemyHealthDelegate();
     public static event enemyHealthDelegate deathEvent;
 
+    private Color startColor;
     private int health;
     private Animator animator;
 
@@ -18,12 +19,18 @@ public class EnemyHealth : MonoBehaviour
 
     private void Start()
     {
+        startColor = GetComponent<SpriteRenderer>().color;
+        health = startHealth;
         nrOfEnemies = FindObjectsOfType<EnemyHealth>().Length;
     }
 
     public void takeDamage(int damage)
     {
         health -= damage;
+        Color color = new Color();
+        color = new Color(startColor.r * startHealth / startHealth, startColor.g * health / startHealth, startColor.b * health / startHealth);
+        GetComponent<SpriteRenderer>().color = color;
+
         if (health <= 0)
         {
             Death();

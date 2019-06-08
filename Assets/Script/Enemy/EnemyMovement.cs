@@ -17,7 +17,7 @@ public class EnemyMovement : MonoBehaviour
     private void Start()
     {
         moveTimeLeft = moveTimeInterval;
-        moveLimit = GameManager.gameFieldSize;
+        moveLimit = LevelManager.gameFieldSize;
     }
 
     private void Update()
