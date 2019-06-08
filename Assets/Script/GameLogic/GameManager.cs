@@ -6,11 +6,8 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject menu;
     [SerializeField] private GameObject HUD;
-    [SerializeField] private float _gameFieldSize = 10;
-
 
     public static GameState gameState { get; private set; } = GameState.Playing;
-    public static float gameFieldSize { get; private set; }
 
 
     private void OnEnable()
@@ -25,10 +22,6 @@ public class GameManager : MonoBehaviour
         PlayerHealth.deathEvent -= MissionFailed;
     }
 
-    private void Awake()
-    {
-        gameFieldSize = _gameFieldSize;
-    }
 
     private void CheckLevelClear()
     {

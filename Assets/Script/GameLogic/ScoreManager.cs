@@ -7,13 +7,13 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI hudScoreText;
 
     private int score;
-    
+
     private void OnEnable()
     {
         EnemyHealth.deathEvent += AddScore;
         EnemyShot.shotHitEvent += AddScore;
     }
-    
+
     private void OnDisable()
     {
         EnemyHealth.deathEvent -= AddScore;
@@ -28,8 +28,11 @@ public class ScoreManager : MonoBehaviour
 
     private void AddScore()
     {
-        score += 100;
-        UpdateScore();
+        if (GameManager.gameState == GameState.Playing)
+        {
+            score += 100;
+            UpdateScore();
+        }
     }
 
     private void UpdateScore()
