@@ -1,12 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Pool<T> : MonoBehaviour where T : Component
 {
-    [SerializeField] T prefab;
+    [SerializeField] private T prefab;
 
     public static Pool<T> Instance { get; private set; }
+
     private Queue<T> objects = new Queue<T>();
 
     private void Awake()
@@ -32,7 +32,7 @@ public abstract class Pool<T> : MonoBehaviour where T : Component
 
     private void AddObjects(int count)
     {
-        var newObject = GameObject.Instantiate(prefab);
+        var newObject = Instantiate(prefab);
         newObject.gameObject.SetActive(false);
         objects.Enqueue(newObject);
     }

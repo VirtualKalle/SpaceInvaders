@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] GameObject menu;
-    [SerializeField] GameObject HUD;
+    [SerializeField] private GameObject menu;
+    [SerializeField] private GameObject HUD;
+    [SerializeField] private float _gameFieldSize = 10;
 
-    [SerializeField] float _gameFieldSize = 10;
+
+    public static GameState gameState { get; private set; } = GameState.Playing;
     public static float gameFieldSize { get; private set; }
-
-    public static bool paused { get; private set; }
 
 
     private void OnEnable()
@@ -33,42 +30,35 @@ public class GameManager : MonoBehaviour
         gameFieldSize = _gameFieldSize;
     }
 
-    void CheckLevelClear()
+    private void CheckLevelClear()
     {
-        Debug.Log("enemies left " + EnemyHealth.nrOfEnemies);
-        if (EnemyHealth.nrOfEnemies <= 0)
+        if (EnemyHealth.nrOfEnemies <= 0 && gameState == GameState.Playing)
         {
             LevelComplete();
         }
     }
 
-    void MissionFailed()
+    private void MissionFailed()
     {
-        menu.SetActive(true);
-        menu.GetComponentInChildren<TextMeshProUGUI>().text = "Mission failed!";
-        Pause();
+        if (gameState == GameState.Playing)
+        {
+            menu.SetActive(true);
+            menu.GetComponentInChildren<TextMeshProUGUI>().text = "Mission failed!";
+            gameState = GameState.Failed;
+        }
     }
 
     private void LevelComplete()
     {
         menu.SetActive(true);
         menu.GetComponentInChildren<TextMeshProUGUI>().text = "Level complete!";
-        Pause();
+        gameState = GameState.Complete;
     }
 
     public void RestartGame()
     {
-        UnPause();
+        gameState = GameState.Playing;
         SceneManager.LoadScene(0);
     }
 
-    void Pause()
-    {
-        paused = true;
-    }
-
-    void UnPause()
-    {
-        paused = false;
-    }
 }

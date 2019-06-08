@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ExplosionManager : MonoBehaviour
 {
@@ -12,10 +10,11 @@ public class ExplosionManager : MonoBehaviour
     {
         lifeTimeLeft = lifeTime;
     }
-    
-    void Update()
+
+    private void Update()
     {
         lifeTimeLeft -= Time.deltaTime;
+
         if (lifeTimeLeft <= 0)
         {
             ExplosionPool.Instance.ReturnToPool(this);

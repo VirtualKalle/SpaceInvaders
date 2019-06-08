@@ -77,9 +77,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd5fa6d83181244ab1cde48f13b7ba5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 3
   damage: 100
-  lifeTime: 3
+  lifeTime: 7
 --- !u!95 &3875007715080111304
 Animator:
   serializedVersion: 3

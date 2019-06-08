@@ -1,55 +1,49 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    private bool moveRight = true;
+    [SerializeField] private float horizontalStepDistance = 0.5f;
+    [SerializeField] private float verticalStepDistance = 0.5f;
 
+    private bool moveRight = true;
     private float moveTimeLeft;
     private float moveTimeInterval = 1;
     private float moveLimit;
 
-    [SerializeField] float horizontalStepDistance = 0.5f;
-    [SerializeField] float verticalStepDistance = 0.5f;
+    private Transform[] enemies;
 
-    void Start()
+
+    private void Start()
     {
         moveTimeLeft = moveTimeInterval;
         moveLimit = GameManager.gameFieldSize;
     }
 
-    void Update()
+    private void Update()
     {
-        if (!GameManager.paused)
+        if (GameManager.gameState == GameState.Playing)
         {
             MoveCountDown();
         }
     }
 
-    void MoveCountDown()
+    private void MoveCountDown()
     {
         moveTimeLeft -= Time.deltaTime;
 
         if (moveTimeLeft < 0)
         {
-            MoveHorizontal();
+            Move();
             moveTimeLeft = moveTimeInterval;
         }
 
     }
 
-    void MoveHorizontal()
+    private void Move()
     {
-        EnemyHealth[] enemyHealths = GetComponentsInChildren<EnemyHealth>();
-        float rightEdgePosition = enemyHealths[0].transform.position.x;
-        float leftEdgePosition = enemyHealths[0].transform.position.x;
-
-        for (int i = 0; i < enemyHealths.Length; i++)
-        {
-            rightEdgePosition = Mathf.Max(enemyHealths[i].transform.position.x, rightEdgePosition);
-            leftEdgePosition = Mathf.Min(enemyHealths[i].transform.position.x, leftEdgePosition);
-        }
+        enemies = GetEnemyTransforms();
+        GetEnemiesEdgePositions(out float rightEdgePosition, out float leftEdgePosition);
 
         if (moveRight && rightEdgePosition < moveLimit)
         {
@@ -61,17 +55,47 @@ public class EnemyMovement : MonoBehaviour
         }
         else
         {
-            transform.Translate(Vector3.down * verticalStepDistance);
-            moveRight = !moveRight;
-            moveTimeInterval *= 0.8f;
-
-            float animationSpeed;
-            for (int i = 0; i < enemyHealths.Length; i++)
-            {
-                animationSpeed = enemyHealths[i].GetComponent<Animator>().GetFloat("speed");
-                enemyHealths[i].GetComponent<Animator>().SetFloat("speed", animationSpeed * 1.1f);
-            }
-
+            MoveVertical();
         }
+    }
+
+    private void MoveVertical()
+    {
+        transform.Translate(Vector3.down * verticalStepDistance);
+        moveRight = !moveRight;
+        moveTimeInterval *= 0.8f;
+
+        float animationSpeed;
+        animationSpeed = enemies[0].GetComponent<Animator>().GetFloat("speed");
+
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            enemies[i].GetComponent<Animator>().SetFloat("speed", animationSpeed * 1.1f);
+        }
+    }
+
+    private void GetEnemiesEdgePositions(out float rightEdgePosition, out float leftEdgePosition)
+    {
+        rightEdgePosition = enemies[0].position.x;
+        leftEdgePosition = enemies[0].position.x;
+
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            rightEdgePosition = Mathf.Max(enemies[i].position.x, rightEdgePosition);
+            leftEdgePosition = Mathf.Min(enemies[i].position.x, leftEdgePosition);
+        }
+    }
+
+    private Transform[] GetEnemyTransforms()
+    {
+        EnemyHealth[] enemyHealths = GetComponentsInChildren<EnemyHealth>();
+        List<Transform> enemiesList = new List<Transform>();
+
+        for (int i = 0; i < enemyHealths.Length; i++)
+        {
+            enemiesList.Add(enemyHealths[i].transform);
+        }
+
+        return enemiesList.ToArray();
     }
 }

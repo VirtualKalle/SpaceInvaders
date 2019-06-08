@@ -1,27 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
+    [SerializeField] private float maxAttackTime = 10;
+    [SerializeField] private float minAttackTime = 3;
+
     private EnemyBlaster blaster;
     private float attackTimeLeft;
-    [SerializeField] float maxAttackTime = 10;
-    [SerializeField] float minAttackTime = 3;
+
 
     private void Awake()
     {
         blaster = GetComponentInChildren<EnemyBlaster>();
     }
 
-    void Start()
+    private void Start()
     {
         attackTimeLeft = Random.Range(minAttackTime, maxAttackTime);
     }
 
-    void Update()
+    private void Update()
     {
-        if (!GameManager.paused)
+        if (GameManager.gameState == GameState.Playing)
         {
             AttackCountDown();
         }
@@ -29,16 +29,15 @@ public class EnemyAttack : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-
-        Debug.Log("enemy collision enter");
         PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+
         if (playerHealth != null)
         {
             playerHealth.takeDamage(100);
         }
     }
 
-    void AttackCountDown()
+    private void AttackCountDown()
     {
         attackTimeLeft -= Time.deltaTime;
 
@@ -49,14 +48,12 @@ public class EnemyAttack : MonoBehaviour
         }
     }
 
-    void TryBlast()
+    private void TryBlast()
     {
-
-        Debug.Log("tryblast");
         RaycastHit hit;
+
         if (Physics.Raycast(blaster.transform.position, Vector3.down, out hit))
         {
-            Debug.Log("ray blast");
             if (!hit.collider.gameObject.GetComponent<EnemyHealth>())
             {
                 Debug.Log("success tryblast");
@@ -67,7 +64,6 @@ public class EnemyAttack : MonoBehaviour
         {
             blaster.Blast();
         }
-
-
+        
     }
 }

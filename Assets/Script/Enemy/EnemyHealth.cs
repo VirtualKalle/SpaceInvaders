@@ -1,18 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    int health;
-    [SerializeField] int startHealth;
+    [SerializeField] private int startHealth;
 
     public static int nrOfEnemies { get; private set; }
-
     public delegate void enemyHealthDelegate();
     public static event enemyHealthDelegate deathEvent;
 
-    Animator animator;
+    private int health;
+    private Animator animator;
 
     private void Awake()
     {
@@ -41,8 +38,8 @@ public class EnemyHealth : MonoBehaviour
         SpawnExplosion();
         gameObject.SetActive(false);
     }
-    
-    void SpawnExplosion()
+
+    private void SpawnExplosion()
     {
         var explosion = ExplosionPool.Instance.Get();
         explosion.transform.rotation = transform.rotation;

@@ -1,21 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    [SerializeField] KeyCode attackButton = KeyCode.Space;
+    [SerializeField] private KeyCode attackButton = KeyCode.Space;
 
-    PlayerBlaster blaster;
+    private PlayerBlaster blaster;
 
     private void Awake()
     {
         blaster = GetComponentInChildren<PlayerBlaster>();
     }
-    
-    void Update()
+
+    private void Update()
     {
-        if (Input.GetKeyDown(attackButton) && !GameManager.paused)
+        if (Input.GetKeyDown(attackButton) && GameManager.gameState == GameState.Playing)
         {
             blaster.Blast();
         }

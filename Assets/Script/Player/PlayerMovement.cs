@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] float speed = 2;
-    [SerializeField] KeyCode moveRight = KeyCode.D;
-    [SerializeField] KeyCode moveLeft = KeyCode.A;
+    [SerializeField] private float speed = 2;
+    [SerializeField] private KeyCode moveRight = KeyCode.D;
+    [SerializeField] private KeyCode moveLeft = KeyCode.A;
+
     private float moveLimit = 10;
 
 
@@ -15,16 +14,15 @@ public class PlayerMovement : MonoBehaviour
         moveLimit = GameManager.gameFieldSize;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (!GameManager.paused)
+        if (GameManager.gameState == GameState.Playing)
         {
             Move();
         }
     }
 
-    void Move()
+    private void Move()
     {
         if (Input.GetKey(moveRight) && transform.position.x < moveLimit)
         {

@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerShot : MonoBehaviour
 {
-    [SerializeField] float moveSpeed = 10f;
-    [SerializeField] int damage = 100;
-    [SerializeField] float lifeTime = 3f;
+    [SerializeField] private float moveSpeed = 10f;
+    [SerializeField] private int damage = 100;
+    [SerializeField] private float lifeTime = 3f;
 
     private float lifeTimeLeft;
 
@@ -15,7 +13,7 @@ public class PlayerShot : MonoBehaviour
         lifeTimeLeft = lifeTime;
     }
 
-    void Update()
+    private void Update()
     {
         transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
         lifeTimeLeft -= Time.deltaTime;
@@ -28,7 +26,6 @@ public class PlayerShot : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        Debug.Log("player shot col enter " + col.gameObject.name);
         EnemyHealth enemyHealth = col.gameObject.GetComponent<EnemyHealth>();
 
         if (enemyHealth != null)
